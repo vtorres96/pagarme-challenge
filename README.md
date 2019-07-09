@@ -26,7 +26,9 @@ $ npm run start
 ### tests
 ```sh
 $ yarn test
-$ npm run test
+```
+```sh
+$ npm test
 ```
 
 ### Listening port on 3030

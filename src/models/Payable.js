@@ -1,35 +1,35 @@
 const mongoose = require('mongoose')
 
 const PayableSchema = new mongoose.Schema({
-    status: [{
-        statusPayable:{
-            type: String,
-            enum: ['paid', 'waiting_funds'],
-            required: [true, 'Status de pagamento obrigatório'],
-        },
-        percentageFee: {
-            type: Number,
-            required: true
-        },
-        amountDay: {
-            type: Number,
-            required: true
-        }
-    }],
-    paymentDate: {
-        type: Date,
-        required: [true, 'Data de pagamento obrigatória']
+  status: [{
+    statusPayable: {
+      type: String,
+      enum: ['paid', 'waiting_funds'],
+      required: [true, 'Status de pagamento obrigatório']
     },
-    fee: {
-        type: Number,
-        required: [true, 'Taxa obrigatória']
+    percentageFee: {
+      type: Number,
+      required: true
     },
-    transactionId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Transaction'
-    },
+    amountDay: {
+      type: Number,
+      required: true
+    }
+  }],
+  paymentDate: {
+    type: Date,
+    required: [true, 'Data de pagamento obrigatória']
+  },
+  fee: {
+    type: Number,
+    required: [true, 'Taxa obrigatória']
+  },
+  transactionId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Transaction'
+  }
 }, {
-    timestamps: true,
+  timestamps: true
 })
 
-module.exports = mongoose.model('Payable', PayableSchema);
+module.exports = mongoose.model('Payable', PayableSchema)

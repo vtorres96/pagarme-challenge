@@ -13,8 +13,8 @@ In order to facilitate the tests, I kept the connection string
 
 ### yarn
 ```sh
-$ yarn install
-$ yarn start
+$ yarn
+$ yarn dev
 ```
 
 ### npm

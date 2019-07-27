@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 const { verifyPaymentMethod, calculatePaymentDate, calculateFee } = require('../../../src/helpers/payableHelper')
+const moment = require('moment')
 
 describe('Transaction Helper', () => {
   it('should return the status of the payable based on the transaction with debit card', () => {
@@ -28,12 +29,12 @@ describe('Transaction Helper', () => {
     expect(response).toEqual(status)
   })
 
-  it('should be able to capture the last four numbers', () => {
-    const days = 10
-
+  it('should be able to adding days to current date', () => {
+    const days = 20
+    const dateAddDays = moment().add(days, 'days').format('YYYY-MM-DD')
     const response = calculatePaymentDate(days)
 
-    expect(response).toBe('2019-07-19')
+    expect(response).toBe(dateAddDays)
   })
 
   it('should return the percentage rate of the transaction with debit card', () => {

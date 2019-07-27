@@ -82,8 +82,6 @@ The basic structure of this challenge is given in the following way:
 
 `node_modules/` Contains all dependencies fetched via NPM. However, this directory is unnecessary for versioning, so it is ignored.
 
-`public/` Contains all the static files you use in your application, this is where you store your front-end files.
-
 `.gitignore` The .gitignore file specifies intentionally untracked files that Git should ignore.
 
 `package.json` Lists all Node.js dependencies.

@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 require('dotenv').config()
 
-class AppController {
+class App {
   constructor () {
     this.express = express()
     this.middlewares()
@@ -18,7 +18,11 @@ class AppController {
   }
 
   database () {
-    mongoose.connect(`mongodb+srv://vtorres96:03V01t96m.@cluster0-bfkrt.mongodb.net/pagarme-challenge?retryWrites=true&w=majority`, {
+    mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${
+      process.env.DB_PASS
+    }@cluster0-bfkrt.mongodb.net/${
+      process.env.DB_NAME
+    }?retryWrites=true&w=majority`, {
       useNewUrlParser: true
     })
   }
@@ -28,4 +32,4 @@ class AppController {
   }
 }
 
-module.exports = new AppController().express
+module.exports = new App().express
